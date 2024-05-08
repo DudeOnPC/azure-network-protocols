@@ -67,30 +67,39 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
   ![image](https://github.com/DudeOnPC/azure-network-protocols/assets/167653474/12597489-bcee-4062-acf6-22d3cddb43ba)
 
   - Back in the Windows 10 VM, observe the ICMP traffic in WireShark and the command line Ping activity
+  ![image](https://github.com/DudeOnPC/azure-network-protocols/assets/167653474/bd677249-f829-4650-9fa7-4cc2c7d76819)
+
   - Re-enable ICMP traffic for the Network Security Group your Ubuntu VM is using
   - Back in the Windows 10 VM, observe the ICMP traffic in WireShark and the command line Ping activity (should start working)
   - Stop the ping activity
 
 
-
 **Part 3 (Observe SSH Traffic)**
+
 11. Back in Wireshark, filter for SSH traffic only
 12. From your Windows 10 VM, “SSH into” your Ubuntu Virtual Machine (via its private IP address)
   - Type commands (username, pwd, etc) into the linux SSH connection and observe SSH traffic spam in WireShark
   - Exit the SSH connection by typing ‘exit’ and pressing [Enter]
+    ![image](https://github.com/DudeOnPC/azure-network-protocols/assets/167653474/4c12cb4c-4c23-47ca-9350-eb062c84e84d)
+
 
 **Part 4 (Observe DHCP Traffic)**
+
 13. Back in Wireshark, filter for DHCP traffic only
 14. From your Windows 10 VM, attempt to issue your VM a new IP address from the command line (ipconfig /renew)
   - Observe the DHCP traffic appearing in WireShark
+![image](https://github.com/DudeOnPC/azure-network-protocols/assets/167653474/d0c431be-22fe-490c-9af4-c01403254bf9)
 
 **Part 5 (Observe DNS Traffic)**
+
 15. Back in Wireshark, filter for DNS traffic only
 16. From your Windows 10 VM within a command line, use nslookup to see what google.com and disney.com’s IP addresses are
   - Observe the DNS traffic being show in WireShark
+![image](https://github.com/DudeOnPC/azure-network-protocols/assets/167653474/b303de9f-6b24-4ced-af93-7a8f15b39213)
 
 **Part 6 (Observe RDP Traffic)**
 17. Back in Wireshark, filter for RDP traffic only (tcp.port == 3389)
 18. Observe the immediate non-stop spam of traffic? Why do you think it’s non-stop spamming vs only showing traffic when you do an activity?
   - Answer: because the RDP (protocol) is constantly showing you a live stream from one computer to another, therefor traffic is always being transmitted
+![image](https://github.com/DudeOnPC/azure-network-protocols/assets/167653474/d630b45c-b80c-4614-85ed-d8eef02ccae2)
 
